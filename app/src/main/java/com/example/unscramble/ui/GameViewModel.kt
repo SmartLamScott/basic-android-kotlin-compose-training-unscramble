@@ -32,9 +32,9 @@ class GameViewModel : ViewModel() {
 
     private fun pickRandomWordAndShuffle(): String {
         // Pick a new random word that hasn't been used before
-        Log.d("pickRandomWordAndShuffle", "usedWords: $usedWords")
+//        Log.d("pickRandomWordAndShuffle", "usedWords: $usedWords")
         currentWord = (allWords - usedWords).random()
-        Log.d("pickRandomWordAndShuffle", "picked $currentWord")
+//        Log.d("pickRandomWordAndShuffle", "picked $currentWord")
         usedWords += currentWord
         return shuffleCurrentWord(currentWord)
     }
@@ -71,6 +71,7 @@ class GameViewModel : ViewModel() {
     fun skipGuess() {
         updateGameState(_uiState.value.score)
         updateUserGuess("")
+//        checkUserGuess()
     }
 
     private fun updateGameState(updatedScore: Int) {
